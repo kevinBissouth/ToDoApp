@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(/static/fonts/Pacifico-Regular.ttf) format('truetype');
+}
+
+:root {
+    --bodyColor: #F08008;
+}
+
+@layer base {
+    body { 
+        @apply bg-[var(--bodyColor)] font-[Pacifico];
+    }
+
+    .container {
+        @apply justify-self-center mx-[10%] md:mx-[30%];
+    }
+}
+
+form input{
+    @apply border-2;
+}
+
+@layer components {
+    .body-custum{
+        @apply bg-white;
+    }
+    @keyframes bouncePause {
+
+        0%,
+        20%,
+        50%,
+        80% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-20px);
+
+        }
+
+        60% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+
+        }
+    }
+
+    .animate-custom-bouncee {
+        animation: bouncePause 4.5s ease-in-out infinite;
+        transition: transform 0.5s ease-in-out;
+    }
+}
