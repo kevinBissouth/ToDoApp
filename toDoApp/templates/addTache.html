@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/src/output.css">
+    <title>toDoApp</title>
+</head>
+<body>
+
+    {% comment %} this is my formulaire page {% endcomment %}
+    <header>
+        <form method="post" >
+            <div class="w-[500px] bg-[#f5a653] justify-self-center absolute mt-[18%] px-[20px] py-[10px] border-2 border-double 
+            rounded-[15px] opacity-100">
+                <p class="mb-[20px]">
+                    <span class="text-3xl">Add a New Task</span>
+                </p>
+                <p class="mb-[5px]"><label for="tache" class="text-xl\">Your Task</label></p>
+                
+                {% comment %} my input zone {% endcomment %}
+                {% csrf_token %}    
+                {{ form.tache }}
+
+                <!-- buttons -->
+                <div class="justify-self-end">
+                    <button class="w-[100px] rounded-[20px] bg-red-700 mr-[20px] p-[3px] border-1 hover:cursor-pointer">
+                        <span><a href="{% url 'work' %}">Close</a></span>
+                    </button>
+
+                    <button type="submit" class="w-[100px] rounded-[20px] bg-green-500 p-[3px] border-1">
+                        <span>Add</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </header>
+
+    {% comment %} this is the main of my toDoApp {% endcomment %}
+    <main class="blur-md pointer-events-none opacity-20">
+        <div class="w-[100%]">
+            <img src="/static/svg/Star1.svg" alt="star1" class="w-26 justify-self-end">
+        </div>
+
+        {% comment %} this is my center components {% endcomment %}
+        <div class="container relative">
+
+            <div class="justify-self-center absolute">
+                <img src="/static/svg/feuille.svg" alt="" class="w-[250px] mt-[170px]">
+            </div>    
+            <div class="relative w-[100%]">
+                <div class="w-[548px] h-[177px] bg-white rounded-[85px] opacity-30 absolute 
+                top-[80px] justify-self-center"></div>
+
+                <div class="w-[548px] h-[177px] justify-self-center flex justify-center
+                    pt-[15px] absolute top-[80px]">
+                    <p class="text-[48px] opacity-100 text-black ">To Do APP</p>
+                    <img src="/static/svg/Ellipse.svg" alt="ellipse.svg" class="w-[80px] h-[81px] mt-[30px]">
+                </div>
+            </div>
+        </div>
+        <div class="mt-[66.5vh] flex justify-between">
+            <div class="">
+                <img src="/static/svg/star2.svg" alt="star2" class="w-26">
+            </div>
+        </div>    
+    </main>
+</body>
+</html>
