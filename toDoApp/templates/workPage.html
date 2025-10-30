@@ -1,0 +1,168 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/src/output.css">
+    <script src="/static/js/main.js" acync></script>
+    <title>toDoApp</title>
+</head>
+<body class="body-custum">
+    {% comment %} this is header of todoapp {% endcomment %}
+    <header>
+        <div>
+            <!--This is my animation components-->
+            <div class="">
+                <div class="w-[200px] h-[646px] z-10 pt-[20px] fixed">
+                    
+                    <div class="w-[190px] h-[40px] mb-[5px]">
+                        <div class="mt-[20px] flex justify-self-center space-x-[2px]">
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:0.5s]">N</p>
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:1s]">o</p>
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:1.5s]">t</p>
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:2s]">i</p>
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:2.5s]">c</p>
+                            <p class="text-2xl animate-custom-bouncee [animation-delay:3s]">e</p>
+                        </div>
+                        <hr class="mt-[5px] w-[80px] justify-self-center">
+                    </div>
+
+                    <div class="">
+                        <div class="w-[100%] h-[20px] border-1 bg-black rounded-t-[20px] opacity-80" ></div>
+                        <hr class="mb-[3px] mt-[3px]">
+                        <hr class="mb-[3px] mt-[3px]">
+                        <hr class="mb-[3px] mt-[3px]">
+                        <div class="w-[100%] px-[5px] py-[3px] ">
+                            
+                            <div class="w-[100%] h-[400px] bg-gradient-to-r from-[#f5a653] to-[var(--bodyColor)]  px-[10px] py-[20px] rounded-[15px]">
+                                <p class="mb-[5px]"><span class="w-[100%] text-center text-md underline ">You Want to manage your tasks?</span></p>
+
+                                <div class="w-[100%] h-[10px] bg-gradient-to-t from-[#f5a653] to-[var(--bodyColor)] mb-[5px] rounded-t-[10px] border-t-2"></div>
+
+                                <ul>
+                                    <li class="mb-[10px]"><span class="text-3xl">.</span> Add a new task with <b class="underline">"Add Task"</b> button</li>
+
+                                    <li class="mb-[20px]"> <div class="flex space-[1px] ">
+                                        <p><span class="text-3xl">.</span> Delete tasks with a single clik using this:</p>
+                                        <img src="/static/svg/erase1.svg" alt="erase1" class="w-[16px] mt-[35px] bg-gray-300 rounded-[10px] animate-pulse"> 
+                                    </div></li>
+
+                                    <li class="mb-[20px]"> <div class="flex space-[3px]">
+                                        <p><p><span class="text-3xl">.</span> Edit existing task with clik using this: </p>
+                                        <img src="/static/svg/modif1.svg" alt="erase1" class="w-[18px] mt-[30px] bg-gray-300 rounded-[10px] animate-pulse">
+                                    </div></li>
+                                </ul>
+
+                                <div class="w-[100%] h-[10px] bg-gradient-to-t from-[#f5a653] to-[var(--bodyColor)] mb-[5px] rounded-b-[10px] border-b-2"></div>
+
+                                <p><span>Thank you for choosing our service !</span></p>
+                            </div>
+                        </div>
+                        <hr class="mb-[3px] mt-[3px]">
+                        <hr class="mb-[3px] mt-[3px]">
+                        <hr class="mb-[3px] mt-[3px]">
+                        <div class="w-[100%] h-[20px] bg-black rounded-b-[20px] opacity-80" ></div>
+                    </div>    
+                </div>
+            </div>    
+            {% comment %} this is my lateral bar  {% endcomment %}
+            <div class="fixed">
+                <div class="absolute">
+                    <div class="w-[200px] h-[646px] bg-[var(--bodyColor)] "></div>
+                </div>
+            </div>
+            
+            <!-- this my nav bar-->
+            <div class="w-[970px] h-[80px] fixed 
+            justify-self-center ml-[150px] bg-white z-42 "></div>
+            <div class="w-[100%] fixed z-50">
+
+                <div class="top-[20px] w-[970px] h-[80px] bg-gray-200 rounded-[85px]  absolute 
+                 justify-self-center ml-[150px]"></div>
+
+                <div class=" w-[548px] h-[177px] justify-self-center flex justify-center
+                     absolute top-[20px] ml-[150px] z-50">
+                    <p class="text-[24px] opacity-100 text-black ">To Do APP</p>
+                    <img src="/static/svg/Ellipse1.svg" alt="ellipse.svg" class="w-[40px] h-[40px] mt-[25px]">
+                </div>
+            </div>    
+            
+
+            {% comment %} the star {% endcomment %}
+            <div class="w-[100%] fixed">
+                <img src="/static/svg/Star12.svg" alt="star12" class="w-26 justify-self-end">
+            </div>
+        </div>    
+    </header>
+
+    {% comment %} this is the main of my todoapp {% endcomment %}
+    <main>
+        {% comment %} this is button for add tache {% endcomment %}
+        <div class="relative bg-yellow-500">
+            <div class="absolute top-[570px] w-[100%] ">
+                <a href="{% url 'add_tache' %}"><button class=" hover:scale-[1.2] hover:cursor-pointer bg-gradient-to-r from-[var(--bodyColor)] to-white w-[200px] h-[50px] rounded-[30px] ml-[48%] fixed z-50 border-3 border-black">
+                    <span>Add Task</span>
+                </button></a>
+            </div>
+        </div>    
+
+        {% comment %} svg of background {% endcomment %}
+        <div class="fixed ml-[20%] pt-[5%] w-[500px]">
+            <img src="/static/svg/Frame.svg" alt="premier svg frame">
+        </div>
+
+        {% comment %} svg of background {% endcomment %}
+        <div class="fixed justify-self-end mt-[400px]">
+            <img src="/static/svg/Frame1.svg" alt="premier svg frame" class="w-[250px]">
+        </div>
+
+        <section class="">
+            <div class="flex-1 justify-self-center relative ml-[150px] top-[100px]">
+
+            {% comment %}   Liste of Taches  {% endcomment %}
+                {% if taches %}
+                    <div class="">
+                        {% for tache in taches %}
+
+                            <!-- begining -->
+                            <div class="w-[800px] justify-self-center z-40  hover:mr-4">
+
+                                <div class="relative">
+                                    <!-- Text -->
+                                    <p class="absolute top-[40px]">
+                                        <span class="ml-[20px]">{{ tache.tache }}</span>
+                                    </p>
+
+                                    <!-- Buttons -->
+                                    <a href="{% url 'modifie_tache' tache.id %}"><button><img src="/static/svg/modif.svg" alt="modif svg" class="absolute -bottom-[6px] right-[100px] 
+                                        hover:scale-[1.2] hover:cursor-pointer"></button></a>
+
+                                    <a href="{% url 'delete_tache' tache.id %}"> <button onclick="return confirm('Voulez-vous vraiment supprimer cette tache ?')">
+                                        <img src="/static/svg/erase.svg" alt="erase svg" class="absolute right-[35px] bottom-[3px] hover:scale-[1.2] hover:cursor-pointer"></button></a>
+
+                                    <!-- whites bar -->
+                                    <div class="w-[10px] h-[55px] bg-white absolute right-[160px]"></div>
+
+                                    <div class="w-[3px] h-[55px] bg-white absolute  right-[90px]"></div>
+
+                                    <!-- background -->
+                                    <div class="w-[820px] h-[55px] bg-[var(--bodyColor)] justify-self-center rounded-[30px] px-[20px]"></div>
+
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                <!-- if you not have a task -->
+                   <p class="text-black italic text-center mr-[5px] underline text-2xl">You Not Have a Task.</p>
+                {% endif %}
+                    </div> 
+
+        </section>
+
+    </main>
+</body>
+</html>

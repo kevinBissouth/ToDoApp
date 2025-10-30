@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/src/output.css">
+    <script src="/static/js/main.js" acync></script>
+    <title>toDoApp</title>
+</head>
+<body>
+
+    {% comment %} this is my loader page {% endcomment %}
+    <header>
+        <div class="relative hidden" id="loadingPage">
+            <div class="justify-self-center flex space-x-4 absolute mt-[22%]">
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:0s]">L</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:0.6s]">O</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:1.2s]">A</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:1.8s]">D</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:2.4s]">I</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:3s]">N</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:3.6s]">G</p>
+                <p class="text-3xl font-extrabold animate-custom-bouncee text-black bg-clip-text [animation-delay:4.2s]">...</p>
+             </div>
+        </div>
+    </header>
+
+    {% comment %} this is the main of my toDoApp {% endcomment %}
+    <main class="pointer-events-none" id="presentationPage">
+        <div class="w-[100%]">
+            <img src="/static/svg/Star1.svg" alt="star1" class="w-26 justify-self-end">
+        </div>
+
+        {% comment %} this is my center components {% endcomment %}
+        <div class="container relative">
+
+            <div class="justify-self-center absolute">
+                <img src="/static/svg/feuille.svg" alt="" class="w-[250px] mt-[170px]">
+            </div>    
+            <div class="relative w-[100%]">
+                <div class="w-[548px] h-[177px] bg-white rounded-[85px] opacity-30 absolute 
+                top-[80px] justify-self-center"></div>
+
+                <div class="w-[548px] h-[177px] justify-self-center flex justify-center
+                    pt-[15px] absolute top-[80px]">
+                    <p class="text-[48px] opacity-100 text-black ">To Do APP</p>
+                    <img src="/static/svg/Ellipse.svg" alt="ellipse.svg" class="w-[80px] h-[81px] mt-[30px]">
+                </div>
+            </div>
+        </div>
+        <div class="mt-[66.5vh] flex justify-between">
+            <div class="">
+                <img src="/static/svg/star2.svg" alt="star2" class="w-26">
+            </div>
+            <div >
+                <a href="{% url 'work' %}"><button id="btn-go" class="hover:cursor-pointer bg-white opacity-50 mr-[30px] w-[200px] h-[50px] rounded-[30px] mt-[40px] animate-bounce">
+                    <span>Let's GO </span>
+                </button></a>
+            </div>
+        </div>    
+    </main>
+</body>
+</html>
+
+{% comment %} // npx @tailwindcss/cli -i ./toDoApp/static/css/src/input.css -o ./toDoApp/static/css/src/output.css --watch {% endcomment %}
