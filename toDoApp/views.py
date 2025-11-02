@@ -33,8 +33,8 @@ def save_tache(request):
     if request.method == 'POST':
         form = TacheForm(request.POST)
         if form.is_valid():
-            form.save()  # sauvegarde directe dans SQLite
-            form = TacheForm()  # réinitialise le formulaire
+            form.save()  
+            form = TacheForm()  
     else:
         form = TacheForm()
     render(request, 'addTache.html', {'form': form})
@@ -42,8 +42,10 @@ def save_tache(request):
 
 def delete_tache(request, id):
     tache = get_object_or_404(Tache, id=id)
-    tache.delete()
-    return redirect('work')
+    if request.method == 'POST':
+        tache.delete()
+        return redirect('work')
+    return render(request, 'confirmer_suppression.html' , {'tache' : tache})
 
 def modifie_tache(request, id):
     tache = get_object_or_404(Tache, id=id)
@@ -55,3 +57,4 @@ def modifie_tache(request, id):
     else:
         form = TacheForm(instance=tache)
     return render(request, 'modifieTache.html', {'form': form, 'tache': tache})
+

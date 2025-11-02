@@ -139,7 +139,7 @@
                                     <a href="{% url 'modifie_tache' tache.id %}"><button><img src="/static/svg/modif.svg" alt="modif svg" class="absolute -bottom-[6px] right-[100px] 
                                         hover:scale-[1.2] hover:cursor-pointer"></button></a>
 
-                                    <a href="{% url 'delete_tache' tache.id %}"> <button onclick="return confirm('Voulez-vous vraiment supprimer cette tache ?')">
+                                    <a href="{% url 'confirme_suppression' tache.id %}"> <button>
                                         <img src="/static/svg/erase.svg" alt="erase svg" class="absolute right-[35px] bottom-[3px] hover:scale-[1.2] hover:cursor-pointer"></button></a>
 
                                     <!-- whites bar -->
